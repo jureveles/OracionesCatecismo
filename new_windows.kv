@@ -1,0 +1,1637 @@
+<TestButton@Button>:
+    background_color: (0, 0, 0, 0)
+    background_normal: ""
+    canvas.before:
+        Color:
+            rgba: (48/255, 84/255, 150/255,0) if self.state=='normal' else (0,.7,.7,0)
+            #This is the color of the button
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10]  #---- This rounds the corners --- #
+
+<TestButton2@Button>:
+    background_color: (0, 0, 0, 0)
+    background_normal: ""
+    canvas.before:
+        Color:
+            rgba: (0.4, 0.4, 0.4,1) if self.state=='normal' else (0,.7,.7,1)
+            #This is the color of the button
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10]  #---- This rounds the corners --- #
+            
+<TestButton3@Button>:
+    background_color: (0, 0, 0, 0)
+    background_normal: ""
+    canvas.before:
+        Color:
+            rgba: (0., 0., 0.,0.15) if self.state=='normal' else (0,.7,.7,1)
+            #This is the color of the button
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10]  #---- This rounds the corners --- #
+               
+       
+WindowManager:
+    MainScreen:
+    ScreenOne:
+    ScreenTwo:
+    ScreenThree:
+    ScreenFour:
+    ScreenFive:
+    ScreenSix:
+    ScreenSeven:
+    ScreenEight:
+    MainScreenE
+    ScreenOneE
+    ScreenTwoE
+    ScreenThreeE
+    ScreenFourE
+    ScreenFiveE
+    ScreenSixE
+    ScreenSevenE
+    ScreenEightE
+    
+<MainScreen>:
+    name: "main_screen"
+    
+    canvas.before:
+        Rectangle:
+            size: self.size
+            source: 'images/SCJ2.png'
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 2
+        Label:
+            size_hint: 1, 0.8
+            id:my_title
+            color: 153/255, 101/255, 21/255, 1
+            font_size: self.width/19
+            markup: True
+            text:
+                '[b]Oraciones Católicas[/b]'
+            canvas.before:
+                Color:
+                    rgba: 48/255, 84/255, 150/255, 0.05
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]  #---- This rounds the corners --- #
+                
+        TestButton2:
+            size_hint: 1, 0.5
+            markup: True
+            text: '[b]English[/b]'
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screenE"
+                
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Padre Nuestro[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_one"
+                       
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Ave María[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_two"
+                
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]La Señal de la Cruz[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_three"
+                        
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Acto de contrición[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_four"
+
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]El Gloria[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_five"
+               
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]El Credo[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_six" 
+                         
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]El Ángel de la Guarda[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_seven"          
+
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Salve Reyna y Madre[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_eight"          
+        
+        TestButton2:
+            markup: True
+            text: "[b]Salir[/b]"
+            size_hint: 1, 0.5
+            on_press: on_press : app.stop()
+        
+<MainScreenE>:
+    name: "main_screenE"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            source: 'images/SCJ2.png'
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 2
+        Label:
+            id:my_title
+            color: 153/255, 101/255, 21/255, 1
+            font_size: self.width/19
+            size_hint: 1, 0.8
+            markup: True
+            text:
+                '[b]Catholic Prayers[/b]'
+            canvas.before:
+                Color:
+                    rgba: 48/255, 84/255, 150/255, 0.05
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]  #---- This rounds the corners --- 
+                    
+        TestButton2:
+            size_hint: 1, 0.5
+            markup: True
+            text: '[b]Español[/b]'
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screen"
+                
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Our Father[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_oneE"
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Hail Mary[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_twoE"      
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]The Sign of the Cross[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_threeE"
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Act of Contrition[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_fourE"
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Glory Be[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_fiveE"        
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Nicene Creed[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_sixE"          
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Guardian Angel Prayer[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_sevenE"          
+        TestButton3:
+            size_hint: 0.5, 1
+            markup: True
+            text: "[b]Hail, Holy Queen[/b]"
+            on_press: 
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "screen_eightE"   
+        TestButton2:
+            size_hint: 1, 0.5
+            markup: True
+            text: "[b]Exit[/b]"
+            on_press: on_press : app.stop()
+                     
+<ScreenOne>:
+    name: "screen_one"
+
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+
+    ScrollView:
+        size: self.size
+        GridLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            width: self.minimum_width
+            cols: 1
+            spacing: "20dp"
+            padding: "20dp"
+            
+            Label:
+                line_height: 1.2
+                markup: True
+                
+                text:
+                    """[b]Padre Nuestro[/b] \n 
+                    Padre Nuestro, 
+                    que estás en el cielo,
+                    santificado sea tu nombre; 
+                    venga a nosotros tu reino; 
+                    hágase tu voluntad, 
+                    en la tierra como en el cielo.
+                    
+                    Danos hoy nuestro pan
+                    de cada día;  
+                    perdona nuestras ofensas, 
+                    como también nosotros 
+                    perdonamos a los 
+                    que nos ofenden; 
+                    no nos dejes caer
+                    en la tentación, 
+                    y líbranos del mal.\n 
+                    Amén."""
+                                   
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+                color: 0, 0, 0, 1
+                font_size: self.width/17
+    
+    
+    RelativeLayout:
+                    
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("01")  
+            on_release:
+                app.root.on_button_release("01")         
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("01")  
+            on_release:
+                app.root.on_button_release("01s")   
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Regresar[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("01")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screen"
+                        
+
+<ScreenOneE>:
+    name: "screen_oneE"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("01E")  
+            on_release:
+                app.root.on_button_release("01E")             
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("01E")   
+            on_release:
+                app.root.on_button_release("01Es")  
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Back[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("01E")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screenE"
+                
+           
+        Label:
+            line_height: 1.2
+            size_hint : 1, 1
+            id:entry
+            color: 0, 0, 0, 1
+            markup: True
+            text:
+                """[b]Our Father[/b] \n
+                Our Father, Who art in heaven, 
+                hallowed be Thy name; 
+                Thy kingdom come; 
+                Thy will be done on earth 
+                as it is in heaven. 
+                Give us this day our daily bread; 
+                and forgive us our trespasses 
+                as we forgive those 
+                who trespass against us; 
+                and lead us not into temptation, 
+                but deliver us from evil \n
+                Amen."""
+            font_size: self.width/19
+            multiline:True
+
+                                                           
+<ScreenTwo>:
+    name: "screen_two"
+    
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+                
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("02")
+            on_release:
+                app.root.on_button_release("02")           
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("02")  
+            on_release:
+                app.root.on_button_release("02s")   
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Regresar[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("02")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screen"
+              
+        Label:
+            id:entry
+            line_height: 1.2
+            size_hint : 1, 1
+            pos_hint : {"center_x" : 0.5}
+            color: 0, 0, 0, 1
+            markup: True
+            text:
+                """ [b]Ave María[/b]\n
+                Dios te salve, María, 
+                llena eres de gracia, 
+                el Señor es contigo. 
+                Bendita Tú eres 
+                entre todas las mujeres 
+                y bendito es el fruto
+                de tu vientre, Jesús.
+                Santa María, 
+                Madre de Dios, 
+                ruega por nosotros
+                los pecadores 
+                ahora y en la hora
+                de nuestra muerte.\n
+                Amén."""
+            font_size: self.width/19
+
+                    
+<ScreenTwoE>:
+    name: "screen_twoE"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1 
+                
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("02E")  
+            on_release:
+                app.root.on_button_release("02E")             
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("02E")   
+            on_release:
+                app.root.on_button_release("02Es")  
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Back[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("02E")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screenE"
+                
+        Label:
+            id:entry
+            line_height: 1.2
+            color: 0, 0, 0, 1
+            markup: True
+            text:
+                """[b]Hail Mary[/b] \n
+                Hail Mary, full of grace, 
+                the Lord is with you; 
+                blessed are you among women, 
+                and blessed is the fruit 
+                of your womb, Jesus. 
+                now and at the hour of our death. \n
+                Amen."""
+            font_size: self.width/19
+            multiline:True
+
+                           
+<ScreenThree>:
+    name: "screen_three"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+              
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("03")    
+            on_release:
+                app.root.on_button_release("03")           
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("03") 
+            on_release:
+                app.root.on_button_release("03s")    
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Regresar[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("03")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screen"   
+
+        Label:
+            id:entry
+            line_height: 1.2
+            color: 0, 0, 0, 1
+            markup: True
+            text:
+                """[b]La Señal de la Santa Cruz[/b] \n
+                Por la señal
+                de la Santa Cruz 
+                de nuestros enemigos 
+                líbranos, Señor, 
+                Dios nuestro. 
+                En el nombre del Padre,
+                y del Hijo, 
+                y del Espíritu Santo. \n
+                Amén."""
+            font_size: self.width/19
+
+
+<ScreenThreeE>:
+    name: "screen_threeE"   
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1            
+
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("03E") 
+            on_release:
+                app.root.on_button_release("03E")              
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("03E")   
+            on_release:
+                app.root.on_button_release("03Es") 
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Back[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("03E")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screenE"
+                
+        Label:
+            id:entry
+            line_height: 1.2
+            color: 0, 0, 0, 1
+            markup: True
+            text:
+                """[b]The Sign of The Cross[/b] \n
+                In the name of the Father 
+                And OF the Son 
+                And OF the Holy Spirit. \n
+                Amen."""
+            font_size: self.width/19
+            multiline:True
+
+
+<ScreenFour>:
+    name: "screen_four"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+
+    ScrollView:
+        size: self.size
+        GridLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            width: self.minimum_width
+            cols: 1
+            spacing: "20dp"
+            padding: "20dp"
+            
+            Label:
+                line_height: 1.2
+                markup: True
+                
+                text:
+                    """[b]Acto de contrición[/b] \n
+                    Señor mío Jesucristo, 
+                    Dios y Hombre verdadero
+                    Creador, Padre 
+                    y Redentor mío; 
+                    por ser Tú quien eres
+                    Bondad infinita, 
+                    y porque te amo 
+                    sobre todas las cosas, 
+                    me pesa de todo corazón 
+                    haberte ofendido. \n
+                    Ayudado de tu divina
+                    gracia, propongo 
+                    firmemente nunca más pecar, 
+                    confesarme y cumplir 
+                    la penitencia 
+                    que me fuere impuesta. \n
+                    Amén.\n"""
+                                   
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+                color: 0, 0, 0, 1
+                font_size: self.width/17
+    
+    
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("04")    
+            on_release:
+                app.root.on_button_release("04")           
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("04") 
+            on_release:
+                app.root.on_button_release("04s")   
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Regresar[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("04")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screen"   
+                
+
+                    
+<ScreenFourE>:
+    name: "screen_fourE"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("04E")  
+            on_release:
+                app.root.on_button_release("04E")             
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("04E")   
+            on_release:
+                app.root.on_button_release("04Es") 
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Back[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("04E")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screenE"
+                
+        Label:
+            id:entry
+            line_height: 1.2
+            color: 0, 0, 0, 1
+            markup: True
+            text:
+                """[b]Act of Contrition[/b] \n
+                O my God, I am heartily sorry 
+                for having offended Thee, 
+                and I detest all my sins because of thy 
+                just punishments, but most of all 
+                because they offend Thee, my God 
+                who art all good and deserving 
+                of all my love. \n
+                I firmly resolve 
+                with the help of Thy grace 
+                to sin no more and to avoid 
+                the near occasion of sin. \n
+                Amen."""
+            font_size: self.width/19
+            multiline:True
+
+
+                
+<ScreenFive>:
+    name: "screen_five"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("05") 
+            on_release:
+                app.root.on_button_release("05")              
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("05")   
+            on_release:
+                app.root.on_button_release("05s") 
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Regresar[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("05")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screen"   
+                
+        Label:
+            id:entry
+            line_height: 1.2
+            color: 0, 0, 0, 1
+            markup: True
+            text:
+                """[b]El Gloria[/b] \n
+                Gloria al Padre 
+                y al Hijo 
+                y al Espíritu Santo. 
+                Como era en un principio, 
+                ahora y siempre, 
+                por los siglos 
+                de los siglos. \n
+                Amén."""
+            font_size: self.width/19
+
+   
+<ScreenFiveE>:
+    name: "screen_fiveE"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("05E") 
+            on_release:
+                app.root.on_button_release("05E")              
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("05E")  
+            on_release:
+                app.root.on_button_release("05Es")  
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Back[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("05E")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screenE"
+                
+        Label:
+            id:entry
+            line_height: 1.2
+            color: 0, 0, 0, 1
+            markup: True
+            text:
+                """[b]Glory Be[/b] \n
+                Glory be to the Father, 
+                and to the Son, 
+                and to the Holy Spirit. 
+                As it was in the beginning, 
+                is now, and ever shall be,
+                world without end. \n
+                Amen."""
+            font_size: self.width/19
+            multiline:True
+              
+
+<ScreenSix>:
+    name: "screen_six"
+
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 0
+                
+    ScrollView:
+        size: self.size
+        GridLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            width: self.minimum_width
+            cols: 1
+            spacing: "20dp"
+            padding: "20dp"
+            
+            Label:
+                line_height: 1.2
+                markup: True
+                
+                text:
+                    """[b]El Credo[/b] \n
+                    Creo en un solo Dios, 
+                    Padre todopoderoso, 
+                    Creador del Cielo y de la tierra, 
+                    de todo lo visible y lo invisible.\n
+                    
+                    Creo en un solo Señor Jesucristo,
+                    Hijo único de Dios, nacido del Padre 
+                    antes de todos los siglos:
+                    Dios de Dios,Luz de Luz,
+                    Dios verdadero de Dios verdadero, 
+                    engendrado, no creado, 
+                    de la misma naturaleza
+                    que el Padre, por quien todo
+                    fue hecho; que, por nosotros 
+                    los hombres y por nuestra salvación
+                    bajó del cielo, y por obra 
+                    del Espíritu Santo se encarnó 
+                    de la Virgen María, y se hizo hombre; 
+                    y por nuestra causa fue crucificado
+                    en tiempos de Poncio Pilato: 
+                    padeció y fue sepultado, 
+                    y resucitó al tercer día,
+                    según las Escrituras
+                    y subió al cielo y está sentado 
+                    a la derecha del Padre; 
+                    y de nuevo vendrá con gloria
+                    para juzgar a vivos y muertos,
+                    y su reino no tendrá fin.\n
+                    
+                    Creo en el Espíritu Santo, 
+                    Señor y dador de vida, 
+                    que procede del Padre y del Hijo, 
+                    que con el Padre y el Hijo
+                    recibe una misma adoración y gloria, 
+                    y que habló por los profetas. 
+                    Creo en la Iglesia,que es una, 
+                    santa, católica y apostólica.
+                    Confieso que hay un solo Bautismo
+                    para el perdón de los pecados. 
+                    Espero la resurrección de los muertos
+                    y la vida del mundo futuro. \n
+                    Amén\n\n """
+                                   
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+                color: 0, 0, 0, 1
+                font_size: self.width/19
+    
+    
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("06")   
+            on_release:
+                app.root.on_button_release("06")            
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("06")   
+            on_release:
+                app.root.on_button_release("06s") 
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Regresar[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("06")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screen"   
+                
+               
+<ScreenSixE>:
+    name: "screen_sixE"  
+    
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 0
+                
+    ScrollView:
+        size: self.size
+        GridLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            width: self.minimum_width
+            cols: 1
+            spacing: "20dp"
+            padding: "20dp"
+            
+            Label:
+                line_height: 1.2
+                markup: True
+                text:
+                    """[b]Nicene Creed[/b] \n
+                    I believe in one God, the Father,
+                    the Almighty,  Maker of heaven
+                    and earth, of all things 
+                    visible and invisible.\n
+                    I believe in one Lord Jesus Christ,
+                    the only-begotten Son of God,
+                    born of the Father before all ages,
+                    God from God, Light from Light,
+                    true God from true God,
+                    begotten, not made, 
+                    consubstantial with the Father. 
+                    Through him all things were made.
+                    For us and for our salvation 
+                    he came down from heaven:
+                    by the power of the Holy Spirit 
+                    was incarnate of the Virgin Mary,
+                    and became man.\n
+                    For our sake he was crucified 
+                    under Pontius Pilate;
+                    he suffered death and was buried, 
+                    and rose again on the third day
+                    in accordance with the Scriptures. 
+                    He ascended into heaven and is seated
+                    at the right hand of the Father.
+                    He will come again in glory 
+                    to judge the living and the dead,
+                    and his kingdom will have no end.\n
+                    I believe in the Holy Spirit, 
+                    the Lord, the giver of life,
+                    who proceeds from the Father
+                    and the Son.
+                    With the Father and the Son
+                    he is adored and glorified.
+                    He has spoken through the Prophets. 
+                    I believe in one, holy, 
+                    catholic and apostolic Church.
+                    I confess one baptism 
+                    for the forgiveness of sins,
+                    and I look forward 
+                    to the resurrection 
+                    of the dead, and the life 
+                    of the world to come.\n
+                    Amen.\n
+                    """
+                
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+                color: 0, 0, 0, 1
+                font_size: self.width/19
+
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("06E")  
+            on_release:
+                app.root.on_button_release("06E")             
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("06E")   
+            on_release:
+                app.root.on_button_release("06Es") 
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Back[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("06E")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screenE"   
+                
+                        
+                                                    
+<ScreenSeven>:
+    name: "screen_seven"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("07")  
+            on_release:
+                app.root.on_button_release("07")             
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("07")  
+            on_release:
+                app.root.on_button_release("07s")  
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Regresar[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("07")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screen"   
+                 
+        Label:
+            id:entry
+            line_height: 1.2
+            color: 0, 0, 0, 1
+            markup: True
+            text:
+                """[b]El Ángel de la Guarda[/b] \n
+                Ángel de mi Guarda, 
+                mi dulce compañía, 
+                no me desampares 
+                ni de noche ni de día. \n
+                Amén. """
+            font_size: self.width/19
+            multiline:True
+
+                                    
+<ScreenSevenE>:
+    name: "screen_sevenE"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+                
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("07E")  
+            on_release:
+                app.root.on_button_release("07E")             
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("07E") 
+            on_release:
+                app.root.on_button_release("07Es")   
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Back[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("07E")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screenE"
+                
+           
+        Label:
+            id:entry
+            line_height: 1.2
+            color: 0, 0, 0, 1
+            markup: True
+            text:
+                """[b]Guardian Angel Prayer[/b] \n
+                O angel of God, 
+                my holy guardian, 
+                given to me from heaven, 
+                enlighten me this day, 
+                and save me from all evil. 
+                Instruct me in doing good deeds, 
+                and set me on the path of salvation. \n
+                Amen."""
+            font_size: self.width/19
+            multiline:True
+
+                
+
+<ScreenEight>:
+    name: "screen_eight"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+
+    ScrollView:
+        size: self.size
+        GridLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            width: self.minimum_width
+            cols: 1
+            spacing: "20dp"
+            padding: "20dp"
+            
+            Label:
+                id:entry
+                line_height: 1.2
+                color: 0, 0, 0, 1
+                markup: True
+                text:
+                    """[b]Dios te Salve, Reyna y Madre[/b] \n
+                    Dios te salve, Reina y Madre 
+                    madre de misericordia, vida, 
+                    dulzura y esperanza nuestra. \n
+                    
+                    Dios te salve. A ti llamamos
+                    los desterrados hijos de Eva; 
+                    a ti suspiramos, gimiendo y llorando 
+                    en este valle de lágrimas.
+                    Ea, pues, Señora abogada nuestra, 
+                    vuelve a nosotros 
+                    esos tus ojos misericordiosos, 
+                    y después de este destierro, 
+                    muéstranos a Jesús, 
+                    fruto bendito de tu vientre. \n
+                    ¡Oh clemente! ¡oh piadosa! 
+                    ¡Oh dulce Virgen María! 
+                    ruega por nosotros Santa Madre de Dios 
+                    para que seamos dignos de alcanzar 
+                    las divinas gracias y las promesas
+                    de nuestro Señor Jesucristo \n
+                    Amén. \n
+                    """     
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+                color: 0, 0, 0, 1
+                font_size: self.width/19
+    
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("08")  
+            on_release:
+                app.root.on_button_release("08")             
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("08")
+            on_release:
+                app.root.on_button_release("08s")    
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Regresar[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("08")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screen"   
+                
+ 
+<ScreenEightE>:
+    name: "screen_eightE"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            Color:
+                rgba: 0, 1, 1, 1
+
+    ScrollView:
+        size: self.size
+        GridLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            width: self.minimum_width
+            cols: 1
+            spacing: "20dp"
+            padding: "20dp"
+            
+            Label:
+                id:entry
+                line_height: 1.2
+                color: 0, 0, 0, 1
+                markup: True
+                text:
+                    """[b]Hail, Holy Queen[/b] \n
+                    Hail, Holy Queen, other of Mercy, 
+                    hail, our life, our sweetness
+                    and our hope. 
+                    To thee do we cry, 
+                    poor banished children of Eve, 
+                    to thee do we send up our sighs, 
+                    mourning and weeping
+                    in this vale of tears. 
+                    Turn, then, most gracious Advocate, 
+                    thine eyes of mercy toward us, 
+                    and after this our exile, 
+                    show unto us the blessed 
+                    fruit of thy womb, 
+                    Jesus; O clement, O loving, 
+                    O sweet virgin Mary. \n
+                    Pray for us,  Holy Mother of God, 
+                    that we may be made worthy 
+                    of the promises of Christ.\n
+                    Amen.\n\n"""
+                    
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+                color: 0, 0, 0, 1
+                font_size: self.width/18
+                
+                
+    RelativeLayout:
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.31, 'y':0.057}
+            on_press:
+                app.root.on_button_play("08E")  
+            on_release:
+                app.root.on_button_release("08E")             
+        Image:
+            id: my_image_play
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':-0.1, 'y':0.06}
+            source: '3D_PLAY_01.png'
+         
+        TestButton:
+            text: ""
+            size_hint: (0.18, 0.07)
+            pos_hint: {'x':0.51, 'y':0.057}
+            on_press: 
+                app.root.on_button_stop("08E")   
+            on_release:
+                app.root.on_button_release("08Es") 
+
+        Image:
+            id: my_image_stop
+            size_hint_y: None
+            height: dp(40)
+            pos_hint: {'x':0.1, 'y':0.06}
+            source: '3D_STOP_01.png'
+            
+        TestButton2:
+            markup: True
+            text: "[b]Back[/b]"
+            size_hint: (0.9, 0.05)
+            pos_hint: {'x':0.05, 'y':0.00}
+            font_size: self.width/22
+            color: 1, 1, 1, 1 #Text color
+            on_press: 
+                app.root.stop_sounds_reset("08E")
+                root.manager.transition.direction = "right"
+                root.manager.transition.duration = 0.001
+                root.manager.current = "main_screenE"
+                  
