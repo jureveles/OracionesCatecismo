@@ -11,7 +11,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,ttf,mp3
 
 # --- Requirements ---
-requirements = python3,kivy
+requirements = python3==3.9.9, kivy==2.3.0, cython==0.29.33
 p4a.bootstrap = sdl2
 p4a.branch = master
 
